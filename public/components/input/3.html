@@ -1,0 +1,43 @@
+<div
+  class="group animate-border rounded-full bg-gradient-to-r from-pink-400 via-sky-400 to-yellow-400 bg-[length:_400%_400%] p-[4px] [animation-duration:_10s]"
+>
+  <div
+    class="relative grid gap-y-1 rounded-full bg-slate-100/90 transition-all group-hover:bg-slate-100/95 dark:bg-slate-800/90 dark:group-hover:bg-slate-700/95"
+  >
+    <input
+      type="text"
+      aria-label="inputtext"
+      name="inputtext"
+      class="w-full rounded-full border-0 bg-white/40 py-3 pr-14 pl-5 text-base ring-2 ring-gray-50/50 backdrop-blur-2xl focus:ring-2 focus:ring-blue-400/50 focus:outline-none dark:bg-slate-800/40 dark:text-white dark:ring-slate-700/50 dark:placeholder:text-slate-400 dark:focus:ring-blue-500/60"
+      placeholder="Search for AI ..."
+    />
+    <button
+      class="group absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer rounded-full px-2 py-1.5 opacity-40 transition-all hover:bg-black/10 hover:px-4 hover:shadow active:scale-90 dark:hover:bg-white/20"
+    >
+      <svg class="size-5 group-hover:scale-105 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          fill="none"
+          stroke="currentColor"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19c1.2-3.678 2.526-5.005 6-6c-3.474-.995-4.8-2.322-6-6c-1.2 3.678-2.526 5.005-6 6c3.474.995 4.8 2.322 6 6Zm-8-9c.6-1.84 1.263-2.503 3-3c-1.737-.497-2.4-1.16-3-3c-.6 1.84-1.263 2.503-3 3c1.737.497 2.4 1.16 3 3Zm1.5 10c.3-.92.631-1.251 1.5-1.5c-.869-.249-1.2-.58-1.5-1.5c-.3.92-.631 1.251-1.5 1.5c.869.249 1.2.58 1.5 1.5Z"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  @keyframes border {
+    0%,
+    100% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  .animate-border {
+    animation: border 10s ease infinite;
+  }
+</style>
