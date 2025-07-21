@@ -29,18 +29,24 @@ export default async function MenuHorizontal() {
         </div>
       </DropdownMenuProvider>
       <div className="flex items-center gap-2">
-        <Link target="_blank" href="https://play.cloveui.asia">
-          <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
-            <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
-            Playground
-          </button>
-        </Link>
         <ArticleMenuItem activeClass="bg-gray-500/15 dark:bg-white/20 !p-0">
           <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Article
           </button>
         </ArticleMenuItem>
+        <Link target="_blank" href="https://play.cloveui.asia">
+          <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
+            <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
+            Playground
+          </button>
+        </Link>
+        <Link target="_blank" href="https://libran.cloveui.asia">
+          <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
+            <Image src="/icons/libran.svg" alt="play" width={12} height={12} priority />
+            Libran
+          </button>
+        </Link>
       </div>
       <div className="mx-3 hidden h-4 w-1 rounded-full bg-[#e0e0e0] xl:block dark:bg-[#e0e0e0]/60"></div>
       <div className="flex items-center gap-2">

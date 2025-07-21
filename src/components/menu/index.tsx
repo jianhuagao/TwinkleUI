@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import clsx from 'clsx';
 import React from 'react';
-import MenuItem, { ArticleMenuItem, PlayMenuItem } from '../menuItem';
+import MenuItem, { ArticleMenuItem, HrefMenuItem } from '../menuItem';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArticleDicMdxProps, getArticlesDic, getComponents } from '@/service/dataService';
@@ -42,14 +42,18 @@ export default memo(async function Menu() {
       </div>
       <div className="shrink-0 px-5">
         <div className="flex flex-col gap-1 border-t border-zinc-950/5 pt-4 transition-all dark:border-white/5">
-          <PlayMenuItem>
-            <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
-            Playground
-          </PlayMenuItem>
           <ArticleMenuItem>
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Article
           </ArticleMenuItem>
+          <HrefMenuItem href="https://libran.cloveui.asia">
+            <Image src="/icons/libran.svg" alt="" width={12} height={12} priority />
+            Libran
+          </HrefMenuItem>
+          <HrefMenuItem href="https://play.cloveui.asia">
+            <Image src="/play/play.svg" alt="" width={16} height={16} priority />
+            Playground
+          </HrefMenuItem>
           <ul className="list-none text-xs opacity-80">
             {Object.values(articles)?.map(s => (
               <li key={s.articleId}>
