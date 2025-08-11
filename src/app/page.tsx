@@ -37,7 +37,7 @@ export default async function Home() {
   const docUrl = redirect ? `/docs/comp/${redirect}` : '/docs';
 
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <HomepageBg />
       <LayoutContent>
         <div className="mx-auto mt-9 flex max-w-7xl flex-col p-5 sm:p-20">
@@ -164,22 +164,22 @@ export default async function Home() {
                 <div className="flex flex-col gap-10 px-16 py-14 md:flex-row">
                   <div className="flex flex-1 flex-col gap-4">
                     <div className="flex items-center gap-4">
-                      <span className="relative inline-block rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-purple-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
+                      <span className="relative inline-block shrink-0 rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-purple-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
                         <span className="relative z-10">TwinkleUI</span>
                         <span className="pointer-events-none absolute right-1.5 bottom-1.5 z-0 size-4 rounded-full bg-purple-400/50 blur-[5px] dark:bg-purple-400/40"></span>
                       </span>
 
-                      <span className="relative inline-block rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-emerald-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
+                      <span className="relative inline-block shrink-0 rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-emerald-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
                         <span className="relative z-10">NextJS</span>
                         <span className="pointer-events-none absolute right-1.5 bottom-1.5 z-0 size-4 rounded-full bg-emerald-400/50 blur-[5px] dark:bg-emerald-400/40"></span>
                       </span>
 
-                      <span className="relative inline-block rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-red-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
+                      <span className="relative inline-block shrink-0 rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-red-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
                         <span className="relative z-10">TailwindCSS</span>
                         <span className="pointer-events-none absolute right-1.5 bottom-1.5 z-0 size-4 rounded-full bg-red-400/50 blur-[5px] dark:bg-red-400/40"></span>
                       </span>
 
-                      <span className="relative inline-block rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-cyan-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
+                      <span className="relative inline-block shrink-0 rounded-full bg-white/70 px-3.5 py-1.5 text-xs text-cyan-800 shadow ring-1 shadow-black/10 ring-white/30 backdrop-blur-md dark:bg-[rgba(255,255,255,0.15)] dark:text-white dark:shadow-white/10 dark:ring-white/20">
                         <span className="relative z-10">Framer-motion</span>
                         <span className="pointer-events-none absolute right-1.5 bottom-1.5 z-0 size-4 rounded-full bg-cyan-400/50 blur-[5px] dark:bg-cyan-400/40"></span>
                       </span>
@@ -210,20 +210,30 @@ export default async function Home() {
                     </Link>
                   </div>
                   <div className="flex-1">
-                    <div className="relative">
+                    <div className="group relative mt-20 ml-auto min-h-[200px] pb-30 sm:pb-80 lg:mt-0 lg:pb-0">
                       <Image
-                        className="absolute top-0 left-1/4 rounded-lg shadow-2xl"
-                        src="/resource/template/t2.jpg"
+                        className="absolute -top-20 left-0 w-full max-w-[200px] -rotate-15 rounded-lg shadow-2xl sm:max-w-sm md:max-w-md"
+                        src="/resource/template/t3.jpg"
+                        alt="libran"
                         width={400}
                         height={200}
-                        alt="libran"
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
                       />
                       <Image
-                        className="absolute top-0 left-0 rounded-lg shadow-2xl"
-                        src="/resource/template/t1.png"
+                        className="absolute -top-10 left-20 w-full max-w-[200px] -rotate-5 rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-10 sm:max-w-sm md:max-w-md"
+                        src="/resource/template/t2.jpg"
+                        alt="libran"
                         width={400}
                         height={200}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
+                      />
+                      <Image
+                        className="absolute top-0 left-40 w-full max-w-[200px] rounded-lg shadow-2xl transition-transform duration-500 ease-in-out group-hover:translate-20 sm:max-w-sm md:max-w-md"
+                        src="/resource/template/t1.png"
                         alt="libran"
+                        width={400}
+                        height={200}
+                        sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 400px"
                       />
                     </div>
                   </div>
