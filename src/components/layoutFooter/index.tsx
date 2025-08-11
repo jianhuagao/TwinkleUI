@@ -14,7 +14,7 @@ export default memo(function Footer() {
             </p>
           </div>
           <div className="mt-5 flex flex-wrap items-center">
-            © 2025 TwinkleUI
+            © 2024 TwinkleUI
             <a
               className="text-primary ml-1 hover:underline"
               href="https://github.com/jianhuagao/TwinkleUI?tab=MIT-1-ov-file#readme"
