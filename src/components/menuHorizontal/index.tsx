@@ -35,13 +35,13 @@ export default async function MenuHorizontal() {
             Article
           </button>
         </ArticleMenuItem>
-        <Link target="_blank" href="https://play.cloveui.asia">
+        <Link target="_blank" href="https://play.jhub.space">
           <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
             <Image src="/play/play.svg" alt="play" width={16} height={16} priority />
             Playground
           </button>
         </Link>
-        <Link target="_blank" href="https://libran.cloveui.asia">
+        <Link target="_blank" href="https://libran.jhub.space">
           <button className="flex cursor-pointer items-center gap-1 rounded-[10px] px-2 py-1 transition-all hover:bg-gray-500/15 dark:hover:bg-white/20">
             <Image src="/icons/libran.svg" alt="play" width={12} height={12} priority />
             Libran

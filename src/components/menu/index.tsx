@@ -46,11 +46,11 @@ export default memo(async function Menu() {
             <Image src="/icons/book.svg" alt="book" className="dark:invert" width={16} height={16} priority />
             Article
           </ArticleMenuItem>
-          <HrefMenuItem href="https://libran.cloveui.asia">
+          <HrefMenuItem href="https://libran.jhub.space">
             <Image src="/icons/libran.svg" alt="" width={12} height={12} priority />
             Libran
           </HrefMenuItem>
-          <HrefMenuItem href="https://play.cloveui.asia">
+          <HrefMenuItem href="https://play.jhub.space">
             <Image src="/play/play.svg" alt="" width={16} height={16} priority />
             Playground
           </HrefMenuItem>

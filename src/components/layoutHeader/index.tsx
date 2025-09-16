@@ -10,7 +10,7 @@ export default memo(function Header() {
       <div className="mx-auto flex h-24 items-center px-5 sm:px-20">
         <LogoBlock />
         <div className="ml-auto"></div>
-        <a href="https://libran.cloveui.asia" target="_blank" className="mr-3 flex items-center gap-2 hover:underline">
+        <a href="https://libran.jhub.space" target="_blank" className="mr-3 flex items-center gap-2 hover:underline">
           <Image src="/icons/libran.svg" width={12} height={12} alt="" />
           Libran
         </a>
