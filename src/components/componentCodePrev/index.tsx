@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react';
+import { memo, useEffect, useMemo } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
 import CopyBtn from '../copyBtn';
@@ -9,20 +9,17 @@ interface ComponentCodePrevProps {
 }
 
 export default memo(function ComponentCodePrev({ componentCode = '', codeType = 'html' }: ComponentCodePrevProps) {
-  const [prismClass, setPrismClass] = useState('language-html');
-  // const [isMounted, setIsMounted] = useState(false);
+  // 使用useMemo根据codeType直接计算prismClass
+  const prismClass = useMemo(() => {
+    if (codeType === 'html') return 'language-html';
+    else if (codeType === 'vue') return 'language-html';
+    else if (codeType === 'jsx') return 'language-jsx';
+    return 'language-html'; // 默认值
+  }, [codeType]);
 
   useEffect(() => {
-    // 设置组件已挂载状态
-    // setIsMounted(true);
     Prism.highlightAll();
   }, [componentCode]);
-
-  useEffect(() => {
-    if (codeType === 'html') setPrismClass('language-html');
-    else if (codeType === 'vue') setPrismClass('language-html');
-    else if (codeType === 'jsx') setPrismClass('language-jsx');
-  }, [codeType]);
 
   return (
     <div className="relative">

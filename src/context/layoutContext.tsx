@@ -15,17 +15,18 @@ interface LayoutProviderProps {
 }
 
 export const LayoutProvider = ({ children }: LayoutProviderProps) => {
-  const [layout, setLayout] = useState<'vertical' | 'horizontal'>('vertical');
-
-  useEffect(() => {
-    const storedLayout = localStorage.getItem('layout');
-    if (storedLayout) {
-      setLayout(storedLayout as 'vertical' | 'horizontal');
-    } else {
-      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: horizontal)').matches;
-      setLayout(prefersDarkScheme ? 'horizontal' : 'vertical');
+  const [layout, setLayout] = useState<'vertical' | 'horizontal'>(() => {
+    if (typeof window !== 'undefined') {
+      const storedLayout = localStorage.getItem('layout');
+      if (storedLayout) {
+        return storedLayout as 'vertical' | 'horizontal';
+      }
+      // 修复媒体查询，使用更合理的默认布局逻辑
+      const isMobile = window.innerWidth < 768;
+      return isMobile ? 'vertical' : 'horizontal';
     }
-  }, []);
+    return 'vertical';
+  });
 
   useEffect(() => {
     if (layout === 'horizontal') {

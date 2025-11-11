@@ -15,17 +15,18 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme) {
-      setTheme(storedTheme as 'light' | 'dark');
-    } else {
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        return storedTheme as 'light' | 'dark';
+      }
+      // 使用系统主题偏好
       const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      setTheme(prefersDarkScheme ? 'dark' : 'light');
+      return prefersDarkScheme ? 'dark' : 'light';
     }
-  }, []);
+    return 'light';
+  });
 
   useEffect(() => {
     if (theme === 'dark') {
